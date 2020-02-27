@@ -4,19 +4,19 @@
     <meta charset="utf-8">
     <script type="text/javascript" src="tingyun-rum.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>KMS一键激活系统</title>
+    <title>KMS一键激活脚本</title>
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <style>
         /*web background*/
 
         .container {
             display: table;
+            margin-top: 40px;
             height: 100%;
         }
 
         .row {
             display: table-cell;
-            vertical-align: middle;
         }
 
         /* centered columns styles */
@@ -37,23 +37,24 @@
 <body>
     <div class="container">
         <div class="row row-centered">
-            <div class="well col-md-6 col-centered">
+            <div class="well col-md-10 col-centered">
                 <div style="background: #f0f8e5;line-height:1;padding: 10px 10px 5px 10px;border-left: 3px solid #86cc00;margin-bottom: 10px;">
-                    <p style="text-align: center;font-size: 20px;margin-bottom: 10px;border-bottom: 1px solid #d0cccc;padding-bottom: 6px;">KMS一键激活系统</p>
-                    <p>1、激活步骤：根据自身系统下载激活脚本，再右键使用管理员运行该脚本即可。</p>
+                    <p style="text-align: center;font-size: 20px;margin-bottom: 10px;border-bottom: 1px solid #d0cccc;padding-bottom: 6px;">KMS一键激活脚本</p>
+                    <p>1、激活步骤：根据Windows系统版本下载激活脚本，再右键使用管理员运行该脚本即可。</p>
 					<p>2、KMS激活适用于专业版（Professional）、企业版（Enterprise）、教育版（Education）和服务器端（Server），如果是旗舰版用户请使用OEM激活或重装系统。</p>
-                    <p>3、不知道系统版本的，使用Win+R，输入cmd并运行，然后在命令窗口输入slmgr/dlv查看版本。</p>
-                    <p>4、如果激活失败可先<a href="./clean">下载清除脚本</a>并运行后再次尝试激活。</p>
-                    <p>5、本站仅供学习交流，不对激活产生的任何问题负责，最终解释权由本站保留。</a></p>
+                    <p>3、不知道系统版本的，使用Win+R，输入cmd并运行，然后在命令窗口输入 slmgr/dlv 查看版本。运行后大约3~5秒弹出信息窗口，在信息窗口的名称一行查看系统版本类型。</p>
+                    <p>4、如果激活失败可先<a href="./clean.php">下载清除脚本</a>并运行后再次尝试激活。</p>
 
                 </div>
-                <form action="./kms" method="post" role="form">
+                <form action="./kms.php" method="post" role="form">
                     <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation"><a href="#Windows10" aria-controls="Windows10" role="tab" data-toggle="tab">Windows 10</a></li>
                         <li role="presentation"><a href="#Windows81" aria-controls="Windows81" role="tab" data-toggle="tab">Windows 8.1</a></li>
                         <li role="presentation"><a href="#Windows8" aria-controls="Windows8" role="tab" data-toggle="tab">Windows 8</a></li>
                         <li role="presentation"><a href="#WindowsVista" aria-controls="WindowsVista" role="tab" data-toggle="tab">Windows Vista</a></li>
                         <li role="presentation"><a href="#Windows7" aria-controls="Windows7" role="tab" data-toggle="tab">Windows 7</a></li>
+                        <li role="presentation"><a href="#WindowsServer2019" aria-controls="WindowsServer2019" role="tab" data-toggle="tab">Windows Server 2019</a></li>  
+                      
                         <li role="presentation"><a href="#WindowsServer2016" aria-controls="WindowsServer2016" role="tab" data-toggle="tab">Windows Server 2016</a></li>
                         <li role="presentation"><a href="#WindowsServer2012" aria-controls="WindowsServer2012" role="tab" data-toggle="tab">Windows Server 2012</a></li>
                         <li role="presentation"><a href="#WindowsServer2008" aria-controls="WindowsServer2008" role="tab" data-toggle="tab">Windows Server 2008</a></li>
@@ -73,6 +74,9 @@
                             <div class="radio"><label><input type="radio" name="kms" value="2F77B-TNFGY-69QQF-B8YKP-D69TJ">Windows 10 Enterprise 2015 LTSB N</label></div>
                             <div class="radio"><label><input type="radio" name="kms" value="DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJ">Windows 10 Enterprise 2016 LTSB</label></div>
                             <div class="radio"><label><input type="radio" name="kms" value="QFFDN-GRT3P-VKWWX-X7T3R-8B639">Windows 10 Enterprise 2016 LTSB N</label></div>
+                          <div class="radio"><label><input type="radio" name="kms" value="M7XTQ-FN8P6-TTKYV-9D4CC-J462D">Windows 10 Enterprise 2019 LTSB</label></div>
+                            <div class="radio"><label><input type="radio" name="kms" value="92NFX-8DJQP-P6BBQ-THF9C-7CG2H">Windows 10 Enterprise 2019 LTSB N</label></div>
+                          
                         </div>
 						<div role="tabpanel" class="tab-pane" id="Windows81">
                             <div class="radio"><label><input type="radio" name="kms" value="GCRJD-8NW9H-F2CDX-CCM8D-9D6T9">Windows 8.1 Professional</label></div>
@@ -100,6 +104,15 @@
                             <div class="radio"><label><input type="radio" name="kms" value="YDRBP-3D83W-TY26F-D46B2-XCKRJ">Windows 7 Enterprise N</label></div>
                             <div class="radio"><label><input type="radio" name="kms" value="C29WB-22CC8-VJ326-GHFJW-H9DH4">Windows 7 Enterprise E</label></div>
                         </div>
+                      
+						<div role="tabpanel" class="tab-pane" id="WindowsServer2019">                            					<div class="radio"><label><input type="radio" name="kms" value="6NMRW-2C8FM-D24W7-TQWMY-CWH2D">Windows Server (Semi-Annual) Datacenter</label></div>
+                            <div class="radio"><label><input type="radio" name="kms" value="N2KJX-J94YW-TQVFB-DG9YT-724CC">Windows Server (Semi-Annual) Standard</label></div>
+                          
+                            <div class="radio"><label><input type="radio" name="kms" value="WMDGN-G9PQG-XVVXX-R3X43-63DFG">Windows Server 2019 Datacenter</label></div>
+                            <div class="radio"><label><input type="radio" name="kms" value="N69G4-B89J2-4G8F4-WWYCC-J464C">Windows Server 2019 Standard</label></div>
+                            <div class="radio"><label><input type="radio" name="kms" value="WVDHN-86M7X-466P6-VHXV7-YY726">Windows Server 2019 Essentials</label></div>
+                        </div>
+                      
 						<div role="tabpanel" class="tab-pane" id="WindowsServer2016">
                             <div class="radio"><label><input type="radio" name="kms" value="CB7KF-BWN84-R7R2Y-793K2-8XDDG">Windows Server 2016 Datacenter</label></div>
                             <div class="radio"><label><input type="radio" name="kms" value="WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY">Windows Server 2016 Standard</label></div>
