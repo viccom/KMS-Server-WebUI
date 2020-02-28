@@ -2,7 +2,7 @@
 <head>
     <meta http-equiv="Content-Language" content="zh-cn">
     <meta charset="utf-8">
-    <script type="text/javascript" src="tingyun-rum.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>KMS一键激活脚本</title>
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -39,7 +39,7 @@
         <div class="row row-centered">
             <div class="well col-md-10 col-centered">
                 <div style="background: #f0f8e5;line-height:1;padding: 10px 10px 5px 10px;border-left: 3px solid #86cc00;margin-bottom: 10px;">
-                    <p style="text-align: center;font-size: 20px;margin-bottom: 10px;border-bottom: 1px solid #d0cccc;padding-bottom: 6px;">KMS一键激活脚本</p>
+                    <p style="text-align: center;font-size: 20px;margin-bottom: 10px;border-bottom: 1px solid #d0cccc;padding-bottom: 6px;">KMS一键激活脚本  |  服务状态：<span class="kms_status"></span></p>
                     <p>1、激活步骤：根据Windows系统版本下载激活脚本，再右键使用管理员运行该脚本即可。</p>
 					<p>2、KMS激活适用于专业版（Professional）、企业版（Enterprise）、教育版（Education）和服务器端（Server），如果是旗舰版用户请使用OEM激活或重装系统。</p>
                     <p>3、不知道系统版本的，使用Win+R，输入cmd并运行，然后在命令窗口输入 slmgr/dlv 查看版本。运行后大约3~5秒弹出信息窗口，在信息窗口的名称一行查看系统版本类型。</p>
@@ -164,6 +164,31 @@
     </div>
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+    
+    
+<script>
+/**
+ *	获取KMS服务器状态
+ */
+function get_kms_status(){
+    $.ajax({
+        url: '/kms/check.php',
+        type: 'get',
+        success:function(req){
+            console.log(req);
+            $("span.kms_status").text(req);
+        },
+        error:function(req){
+            console.log(req);
+        }
+    });
+}
+
+get_kms_status();
+</script>
 </body>
+
+
 
 </html>
